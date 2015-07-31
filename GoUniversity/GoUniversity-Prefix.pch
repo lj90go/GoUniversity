@@ -1,0 +1,26 @@
+//
+//  GoUniversity-Prefix.pch
+//  GoUniversity
+//
+//  Created by edutech on 15/7/31.
+//  Copyright (c) 2015年 luojie. All rights reserved.
+//
+
+#ifndef GoUniversity_GoUniversity_Prefix_pch
+#define GoUniversity_GoUniversity_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+
+#import "EMAlertView.h"
+#import "TTGlobalUICommon.h"
+#import "UIViewController+HUD.h"
+#import "UIViewController+DismissKeyboard.h"
+#import "NSString+Valid.h"
+
+#import "EaseMob.h"
+
+#endif
+#endif

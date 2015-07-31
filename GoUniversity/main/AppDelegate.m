@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import "LoginViewController.h"
+#import "AppDelegate+EaseMob.h"
+#import "MainTabController.h"
 @interface AppDelegate ()
 
 @end
@@ -18,9 +20,33 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     NSLog(@"can you get this modify");
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    [def setObject:[NSNumber numberWithBool:NO] forKey:@"loginstate"];
+    [def synchronize];
+    [self easemobApplication:application didFinishLaunchingWithOptions:launchOptions];
+    [self loginStateChanged];
+    [self.window makeKeyAndVisible];
     return YES;
 }
-
+-(void) loginStateChanged
+{
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    BOOL boo = [def objectForKey:@"loginstate"];
+    if(boo)
+    {
+        MainTabController *TabVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"maintab"];
+        
+        self.window.rootViewController = TabVC;
+    }else
+    {
+        LoginViewController *loginVC = [[LoginViewController alloc] init];
+//        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+//        nav.title = @"上大学";
+        self.window.rootViewController = loginVC;
+    }
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

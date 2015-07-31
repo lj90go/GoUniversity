@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VtV-sS-UCn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Controller View Controller-->
         <scene sceneID="dbU-po-HtC">
             <objects>
-                <tabBarController id="VtV-sS-UCn" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="maintab" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VtV-sS-UCn" customClass="MainTabControllerViewController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="9x3-Np-9FN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -96,7 +96,7 @@
         <!--溜达-->
         <scene sceneID="cRu-Zq-aUj">
             <objects>
-                <viewController id="6wV-Aj-eFO" customClass="Tab1ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tab1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6wV-Aj-eFO" customClass="Tab1ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qwp-qA-MWO"/>
                         <viewControllerLayoutGuide type="bottom" id="TVf-cI-alq"/>
